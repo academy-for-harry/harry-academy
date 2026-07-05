@@ -34,7 +34,7 @@ function spawnWord() {
 
     timer = setInterval(() => {
 
-        y += 0.05;
+        y += 0.15;
         currentCard.style.top = y + "px";
 
         if (y > gameArea.clientHeight - 80) {
@@ -55,7 +55,7 @@ function spawnWord() {
             spawnWord();
         }
 
-    }, 80);
+    }, 250);
 
 }
 
