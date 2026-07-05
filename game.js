@@ -1,35 +1,53 @@
-let score=0,life=5,c=null;
-const i=input;
+const game=document.getElementById('game');
+const input=document.getElementById('answer');
+const scoreEl=document.getElementById('score');
+const livesEl=document.getElementById('lives');
+let score=0,lives=5,current=null,y=0;
+
+function updateLives(){livesEl.textContent="❤️".repeat(lives);}
+
 function spawn(){
- if(c)c.remove();
- let x=WORDS[Math.floor(Math.random()*WORDS.length)];
- let d=document.createElement('div');
- d.className='word';
- d.textContent=x.d;
- d.dataset.a=x.w;
- d.style.left=(20+Math.random()*(innerWidth-350))+'px';
- d.style.top='0px';
- document.body.appendChild(d);
- c=d;
- let y=0;
- let t=setInterval(()=>{
- if(!document.body.contains(d)){clearInterval(t);return;}
- y++; d.style.top=y+'px';
- if(y>innerHeight-80){
- d.remove(); clearInterval(t);
- life--;
- l.textContent='❤️'.repeat(Math.max(0,life));
- if(life<=0){alert('Game Over');location.reload();}
- else spawn();
- }
- },45);
+ if(current) current.remove();
+ current=document.createElement("div");
+ current.className="card";
+ const item=WORDS[Math.floor(Math.random()*WORDS.length)];
+ current.dataset.word=item.word.toLowerCase();
+ current.textContent=item.definition;
+ game.appendChild(current);
+ y=0;
+ current.style.top="0px";
+ input.value="";
+ input.focus();
 }
-i.onkeydown=e=>{
- if(e.key==='Enter'&&c){
- if(i.value.trim().toLowerCase()===c.dataset.a){
- score++; s.textContent='Score:'+score;
- c.remove(); i.value=''; spawn();
+
+setInterval(()=>{
+ if(!current)return;
+ y+=2;
+ current.style.top=y+"px";
+ if(y>window.innerHeight-170){
+   current.remove();
+   current=null;
+   lives--;
+   updateLives();
+   if(lives<=0){
+      alert("Game Over! Score: "+score);
+      location.reload();
+   }else{
+      spawn();
+   }
  }
+},30);
+
+input.addEventListener("keydown",e=>{
+ if(e.key!=="Enter") return;
+ e.preventDefault();
+ if(!current) return;
+ if(input.value.trim().toLowerCase()===current.dataset.word){
+    score++;
+    scoreEl.textContent="Score: "+score;
+    spawn();
  }
-};
+});
+
+updateLives();
 spawn();
