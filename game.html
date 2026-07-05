@@ -1,9 +1,34 @@
-<!doctype html><html><head><meta charset="utf-8">
-<link rel="stylesheet" href="style.css"></head>
-<body style="margin:0;overflow:hidden;background:linear-gradient(#57b8ff,#ff5a00)">
-<div id=s style="position:fixed;left:10px;top:10px;color:white">Score:0</div>
-<div id=l style="position:fixed;right:10px;top:10px;color:white">❤️❤️❤️❤️❤️</div>
-<input id=input placeholder="Type the word and press Enter">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Harry Academy - Word Defense</title>
+
+<link rel="stylesheet" href="game.css">
+
+</head>
+
+<body>
+
+<div id="hud">
+<div id="score">⭐ Score : 0</div>
+<div id="lives">❤️❤️❤️❤️❤️</div>
+</div>
+
+<div id="gameArea">
+</div>
+
+<div id="bottomPanel">
+<input
+        id="answer"
+        type="text"
+        placeholder="Type the English word..."
+        autocomplete="off">
+</div>
+
 <script src="words.js"></script>
 <script src="game.js"></script>
-</body></html>
+
+</body>
+</html>
