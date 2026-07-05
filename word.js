@@ -1,0 +1,22 @@
+const WORDS=[
+{d:"to find and bring back",w:"retrieve"},
+{d:"the ability to direct the actions of someone or something",w:"control"},
+{d:"to grow too big or too old for something",w:"outgrow"},
+{d:"happy, satisfied, delighted",w:"pleased"},
+{d:"to grow or come to be something",w:"become"},
+{d:"used for holding things",w:"chest"},
+{d:"the state of being dirty or not neat",w:"mess"},
+{d:"to tell someone that you will definitely do something",w:"promise"},
+{d:"an animal that lives in water and turns into a frog or toad",w:"tadpole"},
+{d:"not special or in any way unusual",w:"ordinary"},
+{d:"smart enough to act well",w:"sensible"},
+{d:"to bring something secretly",w:"smuggle"},
+{d:"excellent and very impressive",w:"splendid"},
+{d:"showing that someone is behaving wrongly",w:"suspiciously"},
+{d:"the process of teaching skills",w:"training"},
+{d:"old and often valuable",w:"antique"},
+{d:"causing tremendous surprise",w:"astounding"},
+{d:"the quality of following directions",w:"obedience"},
+{d:"to shake or shiver slightly",w:"tremble"},
+{d:"unhappy, angry, or worried",w:"upset"}
+];
