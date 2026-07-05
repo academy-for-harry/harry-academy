@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Harry Academy</title>
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;
+ font-family:Arial,sans-serif;
+ background:linear-gradient(#87ceeb,#dff6ff);
+ color:#183153;
+}
+header{
+ text-align:center;
+ padding:50px 20px;
+ color:white;
+ background:linear-gradient(135deg,#1e88e5,#42a5f5);
+}
+header h1{font-size:52px;margin:0}
+header p{font-size:22px}
+nav{
+ display:flex;
+ justify-content:center;
+ gap:18px;
+ flex-wrap:wrap;
+ margin:30px;
+}
+.card{
+ width:260px;
+ background:white;
+ border-radius:18px;
+ padding:25px;
+ box-shadow:0 8px 18px rgba(0,0,0,.15);
+ text-align:center;
+ transition:.25s;
+}
+.card:hover{transform:translateY(-8px)}
+.icon{font-size:52px}
+button{
+ background:#1e88e5;
+ color:white;
+ border:none;
+ padding:12px 20px;
+ border-radius:10px;
+ cursor:pointer;
+ font-size:18px;
+}
+button:hover{background:#1565c0}
+section{
+ max-width:900px;
+ margin:auto;
+ background:#fffbe7;
+ border-radius:18px;
+ padding:25px;
+}
+footer{
+ text-align:center;
+ padding:40px;
+ color:#666;
+}
+</style>
+</head>
+<body>
+
+<header>
+<h1>Harry Academy</h1>
+<p>Learn • Play • Think</p>
+<h2>Good Morning, Harry! 🌟</h2>
+</header>
+
+<nav>
+
+<div class="card">
+<div class="icon">📰</div>
+<h2>Harry News</h2>
+<p>Read today's article.</p>
+<button onclick="alert('Coming Soon!')">OPEN</button>
+</div>
+
+<div class="card">
+<div class="icon">📖</div>
+<h2>Grammar Lab</h2>
+<p>Master today's grammar.</p>
+<button onclick="alert('Coming Soon!')">OPEN</button>
+</div>
+
+<div class="card">
+<div class="icon">🎮</div>
+<h2>Word Defense</h2>
+<p>Save the falling words!</p>
+<button onclick="alert('Coming Soon!')">PLAY</button>
+</div>
+
+</nav>
+
+<section>
+<h2>🎯 Today's Mission</h2>
+<ul>
+<li>Read one article.</li>
+<li>Study one grammar point.</li>
+<li>Play one vocabulary game.</li>
+<li>Write three English sentences.</li>
+</ul>
+</section>
+
+<footer>
+Made with ❤️ by Yuri & ChatSam
+</footer>
+
+</body>
+</html>
