@@ -19,8 +19,8 @@ function spawn(){
 
     current=document.createElement("div");
     current.className="card";
-    current.dataset.answer=item.word.toLowerCase();
-    current.textContent=item.definition;
+    current.dataset.answer=item.w.toLowerCase();
+    current.textContent=item.d;
     current.style.top="0px";
 
     gameArea.appendChild(current);
