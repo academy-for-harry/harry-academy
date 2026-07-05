@@ -3,12 +3,7 @@ body{
     overflow:hidden;
     font-family:Arial,sans-serif;
 
-    background:linear-gradient(
-        to bottom,
-        #76c8ff 0%,
-        #b8e7ff 55%,
-        #eaf8ff 100%
-    );
+    background:#87CEEB !important;
 }
 
 /* 하늘 */
