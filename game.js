@@ -1,87 +1,95 @@
-const gameArea=document.getElementById("gameArea");
-const input=document.getElementById("answer");
-const scoreBox=document.getElementById("score");
-const livesBox=document.getElementById("lives");
+const gameArea = document.getElementById("gameArea");
+const input = document.getElementById("answer");
+const scoreBox = document.getElementById("score");
+const livesBox = document.getElementById("lives");
 
-let score=0;
-let lives=5;
-let current=null;
-let timer=null;
+let score = 0;
+let lives = 5;
+let currentCard = null;
+let timer = null;
 
-function updateLives(){
-    livesBox.textContent="❤️".repeat(lives);
+function updateLives() {
+    livesBox.textContent = "❤️".repeat(lives);
 }
 
-function spawn(){
-    if(current) current.remove();
+function spawnWord() {
 
-    const item=WORDS[Math.floor(Math.random()*WORDS.length)];
+    if (timer) clearInterval(timer);
+    if (currentCard) currentCard.remove();
 
-    current=document.createElement("div");
-    current.className="card";
-    current.dataset.answer=item.w.toLowerCase();
-    current.textContent=item.d;
-    current.style.top="0px";
+    const item = WORDS[Math.floor(Math.random() * WORDS.length)];
 
-    gameArea.appendChild(current);
+    currentCard = document.createElement("div");
+    currentCard.className = "card";
+    currentCard.innerText = item.d;
+    currentCard.dataset.answer = item.w.toLowerCase();
 
-    let y=0;
+    currentCard.style.left =
+        Math.random() * (gameArea.clientWidth - 340) + "px";
+    currentCard.style.top = "0px";
 
-    clearInterval(timer);
+    gameArea.appendChild(currentCard);
 
-    timer=setInterval(()=>{
-        y+=2;
-        current.style.top=y+"px";
+    let y = 0;
 
-        if(y>gameArea.clientHeight-70){
+    timer = setInterval(() => {
+
+        y += 2;
+        currentCard.style.top = y + "px";
+
+        if (y > gameArea.clientHeight - 80) {
 
             clearInterval(timer);
 
-            current.remove();
+            currentCard.remove();
 
             lives--;
-
             updateLives();
 
-            if(lives<=0){
-                alert("Game Over!\nScore : "+score);
+            if (lives <= 0) {
+                alert("Game Over!");
                 location.reload();
                 return;
             }
 
-            spawn();
+            spawnWord();
         }
 
-    },30);
+    }, 20);
 
-    input.value="";
-    input.focus();
 }
 
-input.addEventListener("keydown",function(e){
+input.addEventListener("keydown", function(e){
 
-    if(e.key!=="Enter") return;
+    if(e.key !== "Enter") return;
 
     e.preventDefault();
 
-    if(!current) return;
+    if(!currentCard) return;
 
-    const answer=input.value.trim().toLowerCase();
+    const answer = input.value.trim().toLowerCase();
 
-    if(answer===current.dataset.answer){
-
-        score++;
-
-        scoreBox.textContent="⭐ Score : "+score;
+    if(answer === currentCard.dataset.answer){
 
         clearInterval(timer);
 
-        current.remove();
+        currentCard.remove();
 
-        spawn();
+        score++;
+        scoreBox.textContent = "⭐ Score : " + score;
+
+        input.value = "";
+
+        spawnWord();
+
+    }else{
+
+        input.value="";
+
     }
 
 });
 
 updateLives();
-spawn();
+spawnWord();
+input.focus();
