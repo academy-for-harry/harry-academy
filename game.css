@@ -2,7 +2,41 @@ body{
     margin:0;
     overflow:hidden;
     font-family:Arial,sans-serif;
-    background:linear-gradient(to bottom,#76c8ff 0%,#cfefff 75%,#86d957 75%,#4caf50 100%);
+
+    background:linear-gradient(
+        to bottom,
+        #76c8ff 0%,
+        #b8e7ff 55%,
+        #eaf8ff 100%
+    );
+}
+
+/* 하늘 */
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    background:
+        radial-gradient(circle at 15% 18%, rgba(255,255,255,.9) 0 35px, transparent 36px),
+        radial-gradient(circle at 22% 18%, rgba(255,255,255,.9) 0 28px, transparent 29px),
+        radial-gradient(circle at 19% 14%, rgba(255,255,255,.9) 0 30px, transparent 31px),
+
+        radial-gradient(circle at 72% 12%, rgba(255,255,255,.85) 0 30px, transparent 31px),
+        radial-gradient(circle at 78% 13%, rgba(255,255,255,.85) 0 24px, transparent 25px),
+        radial-gradient(circle at 75% 9%, rgba(255,255,255,.85) 0 26px, transparent 27px);
+}
+
+/* 잔디 */
+body::after{
+    content:"";
+    position:fixed;
+    left:0;
+    right:0;
+    bottom:0;
+    height:90px;
+    background:#58c63d;
+    border-top:5px solid #43a72b;
 }
 
 #hud{
@@ -12,49 +46,57 @@ body{
     right:20px;
     display:flex;
     justify-content:space-between;
-    font-size:22px;
+    font-size:34px;
     font-weight:bold;
     color:white;
-    text-shadow:2px 2px 4px rgba(0,0,0,.35);
+    text-shadow:2px 2px 5px rgba(0,0,0,.4);
     z-index:1000;
 }
 
 #gameArea{
-    position:absolute;
-    top:0;
+    position:fixed;
+    top:70px;
     left:0;
-    width:100%;
-    height:calc(100vh - 90px);
+    right:0;
+    bottom:120px;
     overflow:hidden;
 }
 
 .card{
     position:absolute;
-    min-width:280px;
-    max-width:420px;
+    min-width:260px;
+    max-width:340px;
+    padding:18px 24px;
     background:white;
-    padding:14px 18px;
-    border-radius:14px;
-    box-shadow:0 6px 14px rgba(0,0,0,.25);
-    font-size:24px;
+    border-radius:18px;
+    box-shadow:0 8px 18px rgba(0,0,0,.18);
     text-align:center;
+    font-size:28px;
+    font-weight:bold;
+    left:50%;
+    transform:translateX(-50%);
 }
 
 #bottomPanel{
     position:fixed;
-    bottom:15px;
-    width:100%;
+    left:0;
+    right:0;
+    bottom:25px;
     display:flex;
     justify-content:center;
-    z-index:9999;
+    z-index:1000;
 }
 
 #answer{
-    width:340px;
-    font-size:24px;
-    padding:12px;
-    border-radius:10px;
-    border:3px solid #2d7ef7;
+    width:420px;
+    padding:16px;
+    font-size:26px;
+    border-radius:12px;
+    border:3px solid #2d74ff;
+    outline:none;
     text-align:center;
 }
 
+#answer:focus{
+    box-shadow:0 0 15px rgba(45,116,255,.4);
+}
