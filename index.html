@@ -5,61 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Harry Academy</title>
 <style>
-*{box-sizing:border-box}
-body{
- margin:0;
- font-family:Arial,sans-serif;
- background:linear-gradient(#87ceeb,#dff6ff);
- color:#183153;
-}
-header{
- text-align:center;
- padding:50px 20px;
- color:white;
- background:linear-gradient(135deg,#1e88e5,#42a5f5);
-}
-header h1{font-size:52px;margin:0}
-header p{font-size:22px}
-nav{
- display:flex;
- justify-content:center;
- gap:18px;
- flex-wrap:wrap;
- margin:30px;
-}
-.card{
- width:260px;
- background:white;
- border-radius:18px;
- padding:25px;
- box-shadow:0 8px 18px rgba(0,0,0,.15);
- text-align:center;
- transition:.25s;
-}
-.card:hover{transform:translateY(-8px)}
-.icon{font-size:52px}
-button{
- background:#1e88e5;
- color:white;
- border:none;
- padding:12px 20px;
- border-radius:10px;
- cursor:pointer;
- font-size:18px;
-}
-button:hover{background:#1565c0}
-section{
- max-width:900px;
- margin:auto;
- background:#fffbe7;
- border-radius:18px;
- padding:25px;
-}
-footer{
- text-align:center;
- padding:40px;
- color:#666;
-}
+body{margin:0;font-family:Arial,sans-serif;background:linear-gradient(#87ceeb,#dff6ff);}
+header{background:#2f8fe8;color:white;text-align:center;padding:50px 20px;}
+header h1{font-size:64px;margin:0;}
+header p{font-size:24px;}
+.cards{display:flex;justify-content:center;gap:30px;flex-wrap:wrap;padding:40px;}
+.card{background:white;width:260px;border-radius:20px;padding:30px;text-align:center;
+box-shadow:0 8px 20px rgba(0,0,0,.15);}
+.card .icon{font-size:60px;}
+button{background:#2f8fe8;color:white;border:none;border-radius:10px;
+padding:14px 28px;font-size:22px;cursor:pointer;}
+.mission{max-width:900px;margin:20px auto 60px;background:#fff8dc;
+padding:25px;border-radius:20px;}
 </style>
 </head>
 <body>
@@ -67,10 +24,10 @@ footer{
 <header>
 <h1>Harry Academy</h1>
 <p>Learn • Play • Think</p>
-<h2>Good Morning, Harry! 🌟</h2>
+<h2>Good Morning, Harry! 🌞</h2>
 </header>
 
-<nav>
+<div class="cards">
 
 <div class="card">
 <div class="icon">📰</div>
@@ -90,24 +47,21 @@ footer{
 <div class="icon">🎮</div>
 <h2>Word Defense</h2>
 <p>Save the falling words!</p>
-<button onclick="alert('Coming Soon!')">PLAY</button>
+<button onclick="window.location.href='game.html'">PLAY</button>
 </div>
 
-</nav>
+</div>
 
-<section>
+<div class="mission">
 <h2>🎯 Today's Mission</h2>
 <ul>
 <li>Read one article.</li>
 <li>Study one grammar point.</li>
-<li>Play one vocabulary game.</li>
-<li>Write three English sentences.</li>
+<li>Play Word Defense!</li>
 </ul>
-</section>
+</div>
 
-<footer>
-Made with ❤️ by Yuri & ChatSam
-</footer>
+<footer style="text-align:center;padding:20px;">Made with ❤️ by Yuri & ChatSam</footer>
 
 </body>
 </html>
