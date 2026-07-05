@@ -73,3 +73,15 @@ body::after{
     border-radius:12px;
     text-align:center;
 }
+#gameArea{
+    background: transparent !important;
+}
+
+body{
+    background: linear-gradient(
+        to bottom,
+        #6ec8ff 0%,
+        #b8e7ff 60%,
+        #eaf8ff 100%
+    ) !important;
+}
