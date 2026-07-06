@@ -85,3 +85,5 @@ body{
         #eaf8ff 100%
     ) !important;
 }
+
+html{background:linear-gradient(to bottom,#76c8ff 0%,#b8e7ff 60%,#eaf8ff 100%) !important;min-height:100%;}
