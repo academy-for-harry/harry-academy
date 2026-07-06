@@ -65,8 +65,7 @@ body::after{
 
 .card{
     position:absolute;
-    left:50%;
-    transform:translateX(-50%);
+    
     min-width:280px;
     max-width:380px;
     padding:18px 24px;
@@ -110,3 +109,5 @@ body{
 }
 
 html{background:linear-gradient(to bottom,#76c8ff 0%,#b8e7ff 60%,#eaf8ff 100%) !important;min-height:100%;}
+
+.card{box-sizing:border-box;}
